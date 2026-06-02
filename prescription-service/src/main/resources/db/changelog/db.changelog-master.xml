@@ -1,0 +1,96 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd">
+
+    <changeSet id="20260602-1-create-medicines-table" author="plecicki">
+        <createTable tableName="medicines">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="active_substance" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dosage_form" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20260602-2-seed-medicines" author="plecicki">
+        <insert tableName="medicines">
+            <column name="name" value="Aspirin C"/>
+            <column name="active_substance" value="Acidum acetylsalicylicum"/>
+            <column name="dosage_form" value="TABLETKI_MUSUJACE"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Amotaks"/>
+            <column name="active_substance" value="Amoxicillinum"/>
+            <column name="dosage_form" value="ZAWIESINA"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Ketonal Forte"/>
+            <column name="active_substance" value="Ketoprofenum"/>
+            <column name="dosage_form" value="TABLETKI"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Paracetamol Biofarm"/>
+            <column name="active_substance" value="Paracetamolum"/>
+            <column name="dosage_form" value="TABLETKI"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Ibum Express"/>
+            <column name="active_substance" value="Ibuprofenum"/>
+            <column name="dosage_form" value="KAPSULKI"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Augmentin"/>
+            <column name="active_substance" value="Amoxicillinum + Acidum clavulanicum"/>
+            <column name="dosage_form" value="TABLETKI_POWLOKANE"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Vigantol"/>
+            <column name="active_substance" value="Cholecalciferolum"/>
+            <column name="dosage_form" value="KROPLE"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Allertec"/>
+            <column name="active_substance" value="Cetirizini dihydrochloridum"/>
+            <column name="dosage_form" value="TABLETKI_POWLOKANE"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Euthyrox N 50"/>
+            <column name="active_substance" value="Levothyroxinum natricum"/>
+            <column name="dosage_form" value="TABLETKI"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Metformax 500"/>
+            <column name="active_substance" value="Metformini hydrochloridum"/>
+            <column name="dosage_form" value="TABLETKI"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Bisocard"/>
+            <column name="active_substance" value="Bisoprololi fumaras"/>
+            <column name="dosage_form" value="TABLETKI_POWLOKANE"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Nospa Max"/>
+            <column name="active_substance" value="Drotaverini hydrochloridum"/>
+            <column name="dosage_form" value="TABLETKI_POWLOKANE"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Xylometazolin WZF"/>
+            <column name="active_substance" value="Xylometazolini hydrochloridum"/>
+            <column name="dosage_form" value="KROPLE_DO_NOSA"/>
+        </insert>
+        <insert tableName="medicines">
+            <column name="name" value="Hydroxyzine VP"/>
+            <column name="active_substance" value="Hydroxyzinum"/>
+            <column name="dosage_form" value="SYROP"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
